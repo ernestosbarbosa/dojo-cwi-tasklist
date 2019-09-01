@@ -1,0 +1,12 @@
+<mat-form-field>
+    <input matInput id="taskName" placeholder="Task Name" [(ngModel)]="data.name">
+</mat-form-field>
+<mat-form-field>
+    <input matInput id="taskHours" type="number" min="0" max="23" placeholder="Hour" [(ngModel)]="data.time.hours">
+</mat-form-field>
+<mat-form-field>
+    <input matInput id="taskMinutes" type="number" min="0" max="59" placeholder="Minutes" [(ngModel)]="data.time.minutes">
+</mat-form-field>
+<button mat-mini-fab id="save" (click)="save()" [disabled]="data.name.trim().length === 0">
+    <mat-icon>save</mat-icon>
+</button>

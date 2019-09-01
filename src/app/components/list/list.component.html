@@ -1,0 +1,22 @@
+<header>
+    <h1>Tasklist</h1>
+</header>
+<article>
+    <mat-card>
+        <mat-list #taskList>
+            <mat-list-item *ngFor="let t of tasks | async; let i = index">
+                <mat-checkbox name="Task {{i+1}}" (click)="changeSelection(t)" [(ngModel)]="t.done">{{t.name}} {{t.time ? '-' : '- All Day'}}
+                    {{t.time ? padLeft(t.time.hours, '0', 2) : ''}} {{t.time ? ':' : ''}}
+                    {{t.time ? padLeft(t.time.minutes, '0', 2) : ''}}</mat-checkbox>
+                <button mat-icon-button (click)="delete(t)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</article>
+<footer>
+    <button mat-mini-fab id="add" (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
+</footer>
