@@ -3,7 +3,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { generate } = require('cucumber-html-reporter');
-const { readdirSync, unlinkSync } = require('fs');
+const { readdirSync, unlinkSync, existsSync } = require('fs');
 
 /**
  * @type { import("protractor").Config }
@@ -35,9 +35,11 @@ exports.config = {
     ]
   },
   onPrepare: () => {
-    unlinkSync(`reports/cucumber_report.xml`);
-    unlinkSync(`reports/cucumber_report.html`);
-    unlinkSync(`reports/cucumber_report.json`);
+    if(existsSync(`reports/cucumber_report.json`)){
+      unlinkSync(`reports/cucumber_report.xml`);
+      unlinkSync(`reports/cucumber_report.html`);
+      unlinkSync(`reports/cucumber_report.json`);
+    }
 
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
