@@ -3,7 +3,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { generate } = require('cucumber-html-reporter');
-const { readdirSync, rmdirSync, mkdirSync, unlinkSync } = require('fs');
+const { readdirSync, unlinkSync } = require('fs');
 
 /**
  * @type { import("protractor").Config }
@@ -24,8 +24,7 @@ exports.config = {
       './pageObjects/**/*.po.ts',
       './steps/**/*.steps.ts',
       './support/**/*.ts'
-    ],
-    tags: "@wip"
+    ]
   },
   suites: {
     tests: [

@@ -48,6 +48,9 @@ Thumbs.db
 .firebase
 debug.log
 
+# Features
+e2e/features/*.feature
+
 # Reports
 reports/*.html
 reports/*.json
