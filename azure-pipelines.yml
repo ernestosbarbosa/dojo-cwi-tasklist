@@ -17,6 +17,7 @@ steps:
 
 - script: |
     npm install -g @angular/cli
+    npm install -g @angular-devkit/build-angular
     npm install
     ng update
     npm update
