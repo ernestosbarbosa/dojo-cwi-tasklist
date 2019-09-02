@@ -22,7 +22,7 @@ exports.config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     compiler: "ts:ts-node/register",
-    format: 'json:./reports/cucumber_report.json',
+    format: ['json:./reports/cucumber_report.json', 'node_modules/cucumber-junit-formatter:./reports/cucumber_report.xml'],
     require: [
       './pageObjects/**/*.po.ts',
       './steps/**/*.steps.ts',
@@ -35,17 +35,17 @@ exports.config = {
     ]
   },
   onPrepare: () => {
-    readdirSync('reports').forEach(function (file) {
-      if (file != '.gitkeep')
-        unlinkSync(`reports/${file}`);
-    });
+    unlinkSync(`reports/cucumber_report.xml`);
+    unlinkSync(`reports/cucumber_report.html`);
+    unlinkSync(`reports/cucumber_report.json`);
+
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
   },
   afterLaunch: () => {
     readdirSync('reports').forEach(function (file) {
-      if (file != '.gitkeep') {
+      if (file != '.gitkeep' && file != 'cucumber_report.xml') {
         var options = {
           theme: 'bootstrap',
           jsonFile: 'reports/' + file,

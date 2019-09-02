@@ -30,4 +30,17 @@ steps:
 
 - script: |
     npm test
-  displayName: 'npm test'
+  displayName: 'Unit Test'
+
+- script: |
+    npm run e2e
+  displayName: 'E2E Test Protractor'
+
+- script: |
+    npm run cucumber
+  displayName: 'E2E Test Protractor + Cucumber'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'reports/**/*.xml'  
