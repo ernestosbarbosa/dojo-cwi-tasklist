@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-container: selenium/standalone-chrome:latest
+container: zenika/alpine-chrome:latest
 
 steps:
 - task: NodeTool@0
