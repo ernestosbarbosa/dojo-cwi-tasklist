@@ -46,3 +46,8 @@ testem.log
 Thumbs.db
 
 .firebase
+debug.log
+
+# Reports
+reports/*.html
+reports/*.json

@@ -6,6 +6,10 @@ describe('Testing TaskList App', () => {
   let page: TaskListPage;
   let dialog: TaskDialogPage;
 
+  beforeAll(()=>{
+    browser.ignoreSynchronization = true
+  })
+
   beforeEach(() => {
     page = new TaskListPage();
     dialog = new TaskDialogPage();

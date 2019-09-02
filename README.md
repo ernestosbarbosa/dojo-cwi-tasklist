@@ -18,6 +18,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+Run `npm run cucumber` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/) + [Cucumber](https://cucumber.io/).
+
 ## Deploy to firebase
 
 Run `firebase login` to connect with your google account and `firebase deploy` to upload build version to `https://dojo-cwi-tasklist.firebaseapp.com`.
