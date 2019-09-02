@@ -7,9 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
-
-container: selenium/standalone-chrome:latest
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -20,8 +18,7 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng build --prod
-  displayName: 'npm install and build'
+  displayName: 'npm install'
 
 - script: |
     npm test
