@@ -11,7 +11,10 @@ const { readdirSync, unlinkSync } = require('fs');
 exports.config = {
   allScriptsTimeout: 60000,
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ["--headless", "--disable-gpu", "--window-size=800,600"]
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
