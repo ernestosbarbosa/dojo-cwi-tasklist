@@ -7,13 +7,18 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'macOS-latest'
 
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+
+- script: |
+    brew install brew-cask
+    brew cask install google-chrome
+  displayName: 'install chrome'
 
 - script: |
     npm install -g @angular/cli
