@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-container: dockerfile/chrome:latest
+container: selenium/standalone-chrome:latest
 
 steps:
 - task: NodeTool@0
