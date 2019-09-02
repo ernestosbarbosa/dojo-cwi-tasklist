@@ -7,9 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
-container: zenika/alpine-chrome:latest
+container: dockerfile/chrome:latest
 
 steps:
 - task: NodeTool@0
