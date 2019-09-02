@@ -16,7 +16,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    brew install brew-cask
     brew cask install google-chrome
   displayName: 'install chrome'
 
